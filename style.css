@@ -15,13 +15,13 @@ p, li {
 
 /* Navbar */
 .navbar {
-    background-color: #460202; /* Change this to your desired color */
+    background-color: #bd0000; /* Change this to your desired color */
 }
 
 .navbar-brand {
-    font-weight: 11000;
+    font-weight: 700;
     font-size: 1.5rem;
-    color: #6d1010; /* Change this to your desired color */
+    color: #660000; /* Change this to your desired color */
 }
 
 .navbar-nav .nav-link {
