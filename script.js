@@ -12,3 +12,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Example of additional interactivity (if needed later)
 console.log("Welcome to Navneet Tiwari's Portfolio!");
+
+
+console.log("Welcome to Navneet Tiwari's Portfolio!11111111111111111111111111");
