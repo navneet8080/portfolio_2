@@ -10,8 +10,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Example of additional interactivity (if needed later)
+// Dark/Light Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
+
 console.log("Welcome to Navneet Tiwari's Portfolio!");
-
-
-console.log("Welcome to Navneet Tiwari's Portfolio!11111111111111111111111111");
