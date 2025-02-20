@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">Navneet Tiwari</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -55,33 +55,27 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5 section-padding">
         <div class="container">
             <h2 class="text-center mb-4">About Me</h2>
-            <p class="text-center">A highly organized and hard-working individual looking for a responsible position to grow more professionally. I'm confident in my skills and have the ability to solve real-life problems to achieve customer satisfaction.</p>
-            <div class="row">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img src="images/Profile_Photo.png" class="rounded-circle img-fluid about-photo" alt="Navneet Tiwari" width="300">
+                </div>
                 <div class="col-md-6">
+                    <p class="lead">A highly organized and hard-working individual looking for a responsible position to grow more professionally. I'm confident in my skills and have the ability to solve real-life problems to achieve customer satisfaction.</p>
                     <h4>Contact Information</h4>
                     <p>📍 R.N. 204 Gayatri Lake View Apartment, Bengaluru (560099)</p>
                     <p>📞 +91-8004229739</p>
                     <p>✉️ <a href="mailto:Navneet708080@gmail.com">Navneet708080@gmail.com</a></p>
                     <p>🔗 <a href="https://www.linkedin.com/in/navneet-tiwari-b59a85181" target="_blank">LinkedIn Profile</a></p>
                 </div>
-                <div class="col-md-6">
-                    <h4>Areas of Expertise</h4>
-                    <ul>
-                        <li>Python, AI & ML</li>
-                        <li>Embedded Systems & Robotics</li>
-                        <li>Automotive (EV)</li>
-                        <li>Innovation</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
+    <section id="skills" class="py-5 section-padding">
         <div class="container">
             <h2 class="text-center mb-4">Skills</h2>
             <div class="row">
@@ -106,10 +100,11 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="py-5 section-padding">
         <div class="container">
             <h2 class="text-center mb-4">Projects</h2>
             <div class="row">
+                <!-- Machine Learning Application -->
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
@@ -119,26 +114,58 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more projects as needed -->
+                <!-- Add more projects here -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">AI Chatbot</h5>
+                            <p class="card-text">Developed an AI chatbot for customer support using NLP techniques.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Embedded System for IoT</h5>
+                            <p class="card-text">Designed and implemented an embedded system for IoT applications.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-5 bg-light">
+    <section id="certifications" class="py-5 section-padding">
         <div class="container">
             <h2 class="text-center mb-4">Certifications</h2>
-            <ul>
-                <li>Data Science and Machine Learning (Udemy | 2023)</li>
-                <li>Computer Vision Fundamentals (Udemy | 2023)</li>
-                <li>Embedded Systems (University of California, Irvine | 2021)</li>
-                <!-- Add more certifications -->
-            </ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>✅ Data Science and Machine Learning (Udemy | 2023)</li>
+                        <li>✅ Computer Vision Fundamentals (Udemy | 2023)</li>
+                        <li>✅ Complete Pandas for Beginners (Udemy | 2023)</li>
+                        <li>✅ Azure Open AI & Prompt Engineering (Udemy | 2023)</li>
+                        <li>✅ Linux Command Line (Udemy | 2023)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li>✅ Oracle Cloud Fundamentals (Oracle | 2023)</li>
+                        <li>✅ Python Specialization (University of Michigan | 2021)</li>
+                        <li>✅ Embedded Systems (University of California, Irvine | 2021)</li>
+                        <li>✅ Internet of Things (Internshala | 2019)</li>
+                        <li>✅ PLC Training (Cepta | 2018)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 section-padding">
         <div class="container">
             <h2 class="text-center mb-4">Hire Me</h2>
             <form action="https://formspree.io/f/your-form-id" method="POST">
@@ -161,7 +188,7 @@
 
     <!-- Footer -->
     <footer class="py-3 bg-dark text-white text-center">
-        <p>© 2024 Navneet Tiwari | All Rights Reserved</p>
+        <p>© 2025 Navneet Tiwari | All Rights Reserved</p>
     </footer>
 
     <script src="script.js"></script>

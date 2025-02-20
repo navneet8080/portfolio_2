@@ -1,57 +1,65 @@
 /* Global Styles */
+:root {
+    --bg-color: #ffffff; /* Light theme background */
+    --text-color: #000000; /* Light theme text */
+    --navbar-bg: #ffffff; /* Light theme navbar background */
+    --navbar-text: #000000; /* Light theme navbar text */
+    --card-bg: #f8f9fa; /* Light theme card background */
+    --card-text: #000000; /* Light theme card text */
+    --section-bg: #f8f9fa; /* Light theme section background */
+}
+
+.dark-mode {
+    --bg-color: #121212; /* Dark theme background */
+    --text-color: #ffffff; /* Dark theme text */
+    --navbar-bg: #1f1f1f; /* Dark theme navbar background */
+    --navbar-text: #ffffff; /* Dark theme navbar text */
+    --card-bg: #1f1f1f; /* Dark theme card background */
+    --card-text: #ffffff; /* Dark theme card text */
+    --section-bg: #1f1f1f; /* Dark theme section background */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
-}
-
-h1, h2, h3, h4, h5 {
-    font-weight: 700;
-}
-
-p, li {
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-mode .navbar {
-    background-color: #1f1f1f;
-}
-
-body.dark-mode .card {
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-
-body.dark-mode .form-control {
-    background-color: #2d2d2d;
-    color: #ffffff;
-    border-color: #444;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #343a40;
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    height: 80px; /* Fixed height for navbar */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
+.navbar .navbar-toggler {
+    border-color: var(--navbar-text);
 }
 
-.navbar-nav .nav-link {
-    font-weight: 600;
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar .nav-link {
+    color: var(--navbar-text);
     transition: color 0.3s;
 }
 
-.navbar-nav .nav-link:hover {
+.navbar .nav-link:hover {
     color: #007bff;
+}
+
+/* Section Padding */
+.section-padding {
+    padding-top: 80px; /* Adjust for fixed navbar */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-padding-top: 80px; /* Same as navbar height */
 }
 
 /* Landing Section */
@@ -70,24 +78,10 @@ body.dark-mode .form-control {
     transform: scale(1.1);
 }
 
-/* Section Titles */
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #007bff;
-    margin: 0.5rem auto;
-}
-
-/* Cards (Projects Section) */
+/* Cards */
 .card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -96,6 +90,12 @@ section h2::after {
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply Variables to Sections */
+#skills, #certifications {
+    background-color: var(--section-bg);
+    color: var(--text-color);
 }
 
 /* Footer */
