@@ -33,6 +33,14 @@ body {
     color: var(--navbar-text);
     height: 80px; /* Fixed height for navbar */
     transition: background-color 0.3s, color 0.3s;
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+}
+
+.navbar-collapse {
+    background-color: var(--navbar-bg); /* Match navbar background */
+    padding: 10px; /* Add some padding */
+    margin-top: 10px; /* Push content down */
 }
 
 .navbar .navbar-toggler {
@@ -52,6 +60,13 @@ body {
     color: #007bff;
 }
 
+/* Remove the odd-looking rectangle in the navbar */
+.navbar-toggler {
+    border: none !important; /* Remove border */
+    outline: none !important; /* Remove outline */
+    box-shadow: none !important; /* Remove box shadow */
+}
+
 /* Section Padding */
 .section-padding {
     padding-top: 80px; /* Adjust for fixed navbar */
@@ -67,15 +82,34 @@ html {
     background: linear-gradient(to bottom, #45729e, #0e1925);
     color: white;
     text-align: center;
+    padding-top: 80px; /* Add padding to account for the fixed navbar */
+    min-height: 100vh; /* Ensure the section fits within the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent overflow */
+}
+
+#landing .container {
+    padding: 20px; /* Add some padding to the container */
+    text-align: justify; /* Justify text */
 }
 
 #landing img {
     border: 5px solid rgb(120, 120, 123);
     transition: transform 0.5s ease;
+    width: 100%; /* Make the image responsive */
+    max-width: 300px; /* Limit the maximum size */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #landing img:hover {
     transform: scale(1.1);
+}
+
+/* Hide part of the text on mobile devices */
+.short-text {
+    display: none;
 }
 
 /* Cards */
@@ -98,6 +132,107 @@ html {
     color: var(--text-color);
 }
 
+#skills img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto;
+}
+
+/* Form Fields */
+#contact .form-control {
+    margin-bottom: 1rem;
+}
+
+#contact .row .col-md-6 {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+#contact .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+    padding: 0.75rem 1.5rem; /* Increase button size for desktop */
+}
+
+#contact .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+#contact .d-flex {
+    gap: 0.5rem; /* Add some gap between textarea and button */
+}
+
+#contact .align-self-md-end {
+    align-self: flex-end; /* Align button to the end of the message box for desktop */
+}
+
+/* Make input boxes equal to the size of the message box */
+#contact .form-control,
+#contact textarea {
+    width: 100%;
+}
+
+/* Modern Form Styles */
+.modern-form {
+    max-width: 800px; /* Increase the maximum width */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modern-form .form-control {
+    background-color: var(--bg-color);
+    border: 1px solid var(--navbar-text);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.modern-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.modern-form .form-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.modern-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.modern-form .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Align button to the right of the message box */
+.modern-form .d-flex {
+    flex-direction: column; /* Stack textarea and button vertically */
+}
+
+@media (min-width: 768px) {
+    .modern-form .d-flex {
+        flex-direction: row; /* Align textarea and button horizontally */
+        justify-content: space-between; /* Space between textarea and button */
+    }
+
+    .modern-form .btn-primary {
+        align-self: flex-end; /* Align button to the end of the message box */
+    }
+}
+
 /* Footer */
 footer {
     background: #222;
@@ -107,4 +242,90 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* About Section */
+#about .about-photo {
+    width: 200px; /* Smaller photo */
+    margin-bottom: 1rem; /* Add some margin */
+}
+
+#about .lead {
+    margin-bottom: 1rem; /* Add some margin */
+    text-align: justify; /* Justify text */
+}
+
+#about h4 {
+    margin-top: 1rem; /* Add some margin */
+}
+
+/* Mobile Styles */
+@media (max-width: 767.98px) {
+    /* Navbar */
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-collapse {
+        background-color: var(--navbar-bg); /* Match navbar background */
+        padding: 10px; /* Add some padding */
+        margin-top: 10px; /* Push content down */
+    }
+
+    /* Landing Section */
+    #landing {
+        padding-top: 60px; /* Adjust for fixed navbar */
+        min-height: calc(100vh - 60px); /* Ensure the section fits within the viewport */
+        overflow: hidden; /* Prevent overflow */
+    }
+
+    #landing h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    #landing p.fs-5 {
+        font-size: 1rem; /* Smaller font size for the paragraph */
+    }
+
+    #landing img {
+        max-width: 200px; /* Smaller photo for mobile */
+    }
+
+    #landing .btn {
+        font-size: 0.9rem; /* Smaller button text for mobile */
+        padding: 0.4rem 0.8rem; /* Smaller button padding for mobile */
+    }
+
+    /* Show short text and hide full text on mobile devices */
+    .short-text {
+        display: inline;
+    }
+
+    .full-text {
+        display: none;
+    }
+
+    /* Contact Section */
+    #contact .d-flex {
+        flex-direction: column; /* Stack textarea and button vertically */
+    }
+
+    #contact .align-self-md-end {
+        align-self: flex-start; /* Align button to the start of the message box for mobile */
+    }
+
+    /* About Section */
+    .about-photo {
+        width: 150px; /* Smaller photo for mobile */
+    }
+
+    /* Skills and Certifications Sections */
+    #skills, #certifications {
+        padding-top: 60px; /* Adjust for fixed navbar */
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.8rem; /* Smaller font size for mobile */
+    }
 }
