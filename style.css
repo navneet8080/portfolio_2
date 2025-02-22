@@ -217,22 +217,6 @@ html {
     background-color: #0056b3;
 }
 
-/* Align button to the right of the message box */
-.modern-form .d-flex {
-    flex-direction: column; /* Stack textarea and button vertically */
-}
-
-@media (min-width: 768px) {
-    .modern-form .d-flex {
-        flex-direction: row; /* Align textarea and button horizontally */
-        justify-content: space-between; /* Space between textarea and button */
-    }
-
-    .modern-form .btn-primary {
-        align-self: flex-end; /* Align button to the end of the message box */
-    }
-}
-
 /* Footer */
 footer {
     background: #222;
