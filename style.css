@@ -62,8 +62,8 @@ body {
 
 /* Remove the odd-looking rectangle in the navbar */
 .navbar-toggler {
-    border: none !important; /* Remove border */
-    outline: none !important; /* Remove outline */
+    border: 1px solid rgb(29, 204, 29); /* Remove border */
+    outline: 2px solid blue !important; /* Remove outline */
     box-shadow: none !important; /* Remove box shadow */
 }
 
