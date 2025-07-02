@@ -114,7 +114,7 @@ if (!document.querySelector('.scroll-nav')) {
 
 const mainNavbar = document.querySelector('.navbar');
 const scrollNav = document.querySelector('.scroll-nav');
-const skillsSection = document.getElementById('Home');
+const skillsSection = document.getElementById('landing');
 
 function toggleScrollNav() {
     const skillsBottom = skillsSection.getBoundingClientRect().bottom + window.scrollY;
