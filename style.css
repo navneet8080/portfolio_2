@@ -1,315 +1,366 @@
-/* Global Styles */
+/* =============================
+   🌗 THEME VARIABLES
+============================= */
 :root {
-    --bg-color: #ffffff; /* Light theme background */
-    --text-color: #000000; /* Light theme text */
-    --navbar-bg: #ffffff; /* Light theme navbar background */
-    --navbar-text: #000000; /* Light theme navbar text */
-    --card-bg: #f8f9fa; /* Light theme card background */
-    --card-text: #000000; /* Light theme card text */
-    --section-bg: #f8f9fa; /* Light theme section background */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --navbar-bg: #ffffff;
+    --navbar-text: #000000;
+    --card-bg: #f9f9f9;
+    --card-text: #000000;
+    --section-bg: #f5f7fa;
+    --section-bg-alt: #eaeef2;
+    --accent: #007bff;
+    --navbar-text-rgb: 0, 0, 0;
 }
 
 .dark-mode {
-    --bg-color: #121212; /* Dark theme background */
-    --text-color: #ffffff; /* Dark theme text */
-    --navbar-bg: #1f1f1f; /* Dark theme navbar background */
-    --navbar-text: #ffffff; /* Dark theme navbar text */
-    --card-bg: #1f1f1f; /* Dark theme card background */
-    --card-text: #ffffff; /* Dark theme card text */
-    --section-bg: #1f1f1f; /* Dark theme section background */
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --navbar-bg: #1f1f1f;
+    --navbar-text: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-text: #ffffff;
+    --section-bg: #1a1a1a;
+    --section-bg-alt: #1c1c1c;
+    --accent: #3399ff;
+    --navbar-text-rgb: 255, 255, 255;
 }
 
+/* =============================
+   🔤 GENERAL BODY
+============================= */
 body {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
 }
 
-/* Navbar */
+/* =============================
+   📌 NAVBAR
+============================= */
 .navbar {
     background-color: var(--navbar-bg);
     color: var(--navbar-text);
-    height: 80px; /* Fixed height for navbar */
-    transition: background-color 0.3s, color 0.3s;
-    border: none; /* Remove border */
-    box-shadow: none; /* Remove box shadow */
-}
-
-.navbar-collapse {
-    background-color: var(--navbar-bg); /* Match navbar background */
-    padding: 10px; /* Add some padding */
-    margin-top: 10px; /* Push content down */
-}
-
-.navbar .navbar-toggler {
-    border-color: var(--navbar-text);
-}
-
-.navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    height: 80px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
 .navbar .nav-link {
     color: var(--navbar-text);
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-    color: #007bff;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--accent);
+    font-weight: bold;
 }
 
-/* Remove the odd-looking rectangle in the navbar */
-.navbar-toggler {
-    border: 1px solid rgb(29, 204, 29); /* Remove border */
-    outline: 2px solid blue !important; /* Remove outline */
-    box-shadow: none !important; /* Remove box shadow */
+.navbar .nav-link.active {
+    color: var(--accent) !important;
+    font-weight: 700;
 }
 
-/* Section Padding */
-.section-padding {
-    padding-top: 80px; /* Adjust for fixed navbar */
+.dark-mode .navbar .nav-link.active {
+    color: #3399ff !important;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-padding-top: 80px; /* Same as navbar height */
+.navbar .navbar-toggler {
+    border-color: rgba(var(--navbar-text-rgb), 0.2);
+    box-shadow: none;
 }
 
-/* Landing Section */
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='currentColor' stroke-linecap='round' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =============================
+   🛬 LANDING SECTION
+============================= */
 #landing {
     background: linear-gradient(to bottom, #45729e, #0e1925);
     color: white;
-    text-align: center;
-    padding-top: 80px; /* Add padding to account for the fixed navbar */
-    min-height: 100vh; /* Ensure the section fits within the viewport */
+    padding-top: 80px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
+    text-align: left;
 }
 
 #landing .container {
-    padding: 20px; /* Add some padding to the container */
-    text-align: justify; /* Justify text */
+    padding: 20px;
 }
 
 #landing img {
-    border: 5px solid rgb(120, 120, 123);
-    transition: transform 0.5s ease;
-    width: 100%; /* Make the image responsive */
-    max-width: 300px; /* Limit the maximum size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-#landing img:hover {
-    transform: scale(1.1);
-}
-
-/* Hide part of the text on mobile devices */
-.short-text {
-    display: none;
-}
-
-/* Cards */
-.card {
-    background-color: var(--card-bg);
-    color: var(--card-text);
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Apply Variables to Sections */
-#skills, #certifications {
-    background-color: var(--section-bg);
-    color: var(--text-color);
-}
-
-#skills img {
-    max-width: 100%; /* Ensure images fit within their container */
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.4s;
+    max-width: 300px;
     height: auto;
 }
 
-/* Form Fields */
-#contact .form-control {
-    margin-bottom: 1rem;
+#landing img:hover {
+    transform: scale(1.05);
 }
 
-#contact .row .col-md-6 {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+/* =============================
+   📦 CARD STYLES
+============================= */
+.card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#contact .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s, border-color 0.3s;
-    padding: 0.75rem 1.5rem; /* Increase button size for desktop */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-#contact .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+/* =============================
+   📑 SECTIONS
+============================= */
+.section-padding {
+    padding: 80px 0;
 }
 
-#contact .d-flex {
-    gap: 0.5rem; /* Add some gap between textarea and button */
+#skills, #certifications {
+    background-color: var(--section-bg-alt);
 }
 
-#contact .align-self-md-end {
-    align-self: flex-end; /* Align button to the end of the message box for desktop */
+#projects, #about, #contact {
+    background-color: var(--section-bg);
 }
 
-/* Make input boxes equal to the size of the message box */
-#contact .form-control,
-#contact textarea {
-    width: 100%;
+h2 {
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
-/* Modern Form Styles */
+/* =============================
+   📧 CONTACT FORM
+============================= */
 .modern-form {
-    max-width: 800px; /* Increase the maximum width */
+    max-width: 700px;
     margin: 0 auto;
     padding: 2rem;
     background-color: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .modern-form .form-control {
     background-color: var(--bg-color);
-    border: 1px solid var(--navbar-text);
+    border: 1px solid #ccc;
     color: var(--text-color);
     border-radius: 5px;
-    padding: 0.75rem;
     margin-bottom: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    padding: 0.75rem;
 }
 
 .modern-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.modern-form .form-label {
-    font-weight: 500;
-    color: var(--text-color);
+    border-color: var(--accent);
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
 }
 
 .modern-form .btn-primary {
-    background-color: #007bff;
+    background-color: var(--accent);
     border: none;
-    padding: 0.75rem 2rem;
+    padding: 0.7rem 2rem;
+    font-weight: 600;
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .modern-form .btn-primary:hover {
     background-color: #0056b3;
 }
 
-/* Footer */
+/* =============================
+   👣 FOOTER
+============================= */
 footer {
-    background: #222;
-    color: white;
-    font-size: 0.9rem;
+    background-color: #1f1f1f;
+    color: #ccc;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 1rem 0;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* About Section */
-#about .about-photo {
-    width: 200px; /* Smaller photo */
-    margin-bottom: 1rem; /* Add some margin */
-}
-
-#about .lead {
-    margin-bottom: 1rem; /* Add some margin */
-    text-align: justify; /* Justify text */
-}
-
-#about h4 {
-    margin-top: 1rem; /* Add some margin */
-}
-
-/* Mobile Styles */
-@media (max-width: 767.98px) {
-    /* Navbar */
-    .navbar {
-        padding: 10px 0;
-    }
-
-    .navbar-collapse {
-        background-color: var(--navbar-bg); /* Match navbar background */
-        padding: 10px; /* Add some padding */
-        margin-top: 10px; /* Push content down */
-    }
-
-    /* Landing Section */
-    #landing {
-        padding-top: 60px; /* Adjust for fixed navbar */
-        min-height: calc(100vh - 60px); /* Ensure the section fits within the viewport */
-        overflow: hidden; /* Prevent overflow */
-    }
-
+/* =============================
+   📱 MOBILE RESPONSIVENESS
+============================= */
+@media (max-width: 768px) {
     #landing h1 {
-        font-size: 2rem; /* Smaller font size for mobile */
-    }
-
-    #landing p.fs-5 {
-        font-size: 1rem; /* Smaller font size for the paragraph */
-    }
-
-    #landing img {
-        max-width: 200px; /* Smaller photo for mobile */
+        font-size: 2rem;
     }
 
     #landing .btn {
-        font-size: 0.9rem; /* Smaller button text for mobile */
-        padding: 0.4rem 0.8rem; /* Smaller button padding for mobile */
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
     }
 
-    /* Show short text and hide full text on mobile devices */
-    .short-text {
-        display: inline;
+    #landing .container {
+        text-align: center;
     }
 
-    .full-text {
-        display: none;
+    #landing img {
+        max-width: 180px;
     }
 
-    /* Contact Section */
-    #contact .d-flex {
-        flex-direction: column; /* Stack textarea and button vertically */
-    }
-
-    #contact .align-self-md-end {
-        align-self: flex-start; /* Align button to the start of the message box for mobile */
-    }
-
-    /* About Section */
     .about-photo {
-        width: 150px; /* Smaller photo for mobile */
+        width: 140px;
+        margin: 0 auto 1rem;
     }
 
-    /* Skills and Certifications Sections */
-    #skills, #certifications {
-        padding-top: 60px; /* Adjust for fixed navbar */
+    #contact .d-flex {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    /* Footer */
     footer {
-        font-size: 0.8rem; /* Smaller font size for mobile */
+        font-size: 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
     }
 }
+
+#landing .container, #about .lead {
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    .navbar {
+        height: 60px;
+    }
+}
+
+/* Responsive horizontal scrollable nav for mobile */
+@media (max-width: 991.98px) {
+    #navbarNav {
+        border-radius: 16px 16px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0.6rem 5px;
+        background: var(--navbar-bg);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        
+        
+    }
+    #navbarNav .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 0.5rem;
+        min-width: max-content;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    #navbarNav .nav-item {
+        flex: 0 0 auto;
+    }
+    #navbarNav .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        margin: 0 0.1rem;
+        transition: background 0.2s;
+    }
+    #navbarNav .nav-link.active, #navbarNav .nav-link:hover {
+        background: var(--accent);
+        color: #fff !important;
+    }
+}
+
+/* Scrollable horizontal nav bar for scroll-triggered menu */
+.scroll-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1040;
+    background: var(--navbar-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0.5rem 0.2rem;
+    transition: top 0.3s;
+}
+.scroll-nav .scroll-nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    min-width: max-content;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.scroll-nav .scroll-nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    color: var(--navbar-text);
+    background: none;
+    text-decoration: none;
+    margin: 0 0.1rem;
+    transition: background 0.2s, color 0.2s;
+}
+.scroll-nav .scroll-nav-link.active,
+.scroll-nav .scroll-nav-link:hover {
+    background: var(--accent);
+    color: #fff !important;
+}
+
+@media (min-width: 992px) {
+    .scroll-nav {
+        display: none !important;
+    }
+}
+
+/* Animate On Scroll (AOS) library support */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+
+

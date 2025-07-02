@@ -65,4 +65,96 @@ document.addEventListener('click', (e) => {
     }
 });
 
-console.log("Welcome to Navneet Tiwari's Portfolio!");
+// Highlight active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+function activateNavLink() {
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSection)) {
+            link.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', activateNavLink);
+
+// Animate On Scroll (AOS) initialization
+if (typeof AOS !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    });
+}
+
+// --- Scroll-triggered horizontal nav ---
+// Create the scroll-nav dynamically if not present
+if (!document.querySelector('.scroll-nav')) {
+    const scrollNav = document.createElement('nav');
+    scrollNav.className = 'scroll-nav';
+    scrollNav.innerHTML = `
+        <ul class="scroll-nav-list">
+            <li><a class="scroll-nav-link" href="#about">About</a></li>
+            <li><a class="scroll-nav-link" href="#skills">Skills</a></li>
+            <li><a class="scroll-nav-link" href="#projects">Projects</a></li>
+            <li><a class="scroll-nav-link" href="#certifications">Certifications</a></li>
+            <li><a class="scroll-nav-link" href="#contact">Contact</a></li>
+        </ul>
+    `;
+    document.body.appendChild(scrollNav);
+}
+
+const mainNavbar = document.querySelector('.navbar');
+const scrollNav = document.querySelector('.scroll-nav');
+const skillsSection = document.getElementById('Home');
+
+function toggleScrollNav() {
+    const skillsBottom = skillsSection.getBoundingClientRect().bottom + window.scrollY;
+    if (window.scrollY >= skillsBottom) {
+        mainNavbar.style.display = 'none';
+        scrollNav.style.display = 'block';
+    } else {
+        mainNavbar.style.display = '';
+        scrollNav.style.display = 'none';
+    }
+}
+window.addEventListener('scroll', toggleScrollNav);
+
+// Highlight active link in scroll-nav
+function activateScrollNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    let currentSection = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    document.querySelectorAll('.scroll-nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSection)) {
+            link.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', activateScrollNavLink);
+
+// Smooth scroll for scroll-nav links
+scrollNav.addEventListener('click', function(e) {
+    if (e.target.classList.contains('scroll-nav-link')) {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+});
+
