@@ -1,0 +1,22 @@
+{
+  "name": "Navneet Tiwari | Workday Consultant, Robotics Researcher & Applied AI Engineer",
+  "short_name": "Navneet Tiwari",
+  "description": "Workday Pro Integrations Certified professional with experience in Workday integrations, Workday security, robotics research, and applied AI solutions.",
+  "start_url": "/portfolio_2/",
+  "display": "standalone",
+  "background_color": "#070a13",
+  "theme_color": "#070a13",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

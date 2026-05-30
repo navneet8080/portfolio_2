@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://navneet8080.github.io/portfolio_2/sitemap.xml

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background premium dark gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#05070c" />
+    </linearGradient>
+    
+    <!-- NT Monogram main metallic silver/blue gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    
+    <!-- Subtle secondary accent gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    
+    <!-- Box shadow for premium depth -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="8"/>
+  
+  <!-- Outer subtle circular orbit representing robotics systems -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-dasharray="16 32" opacity="0.6" />
+  
+  <!-- Interlocking geometric N and T Monogram -->
+  <g filter="url(#glow)">
+    <!-- T bar top -->
+    <path d="M 140 180 L 372 180 L 372 220 L 140 220 Z" fill="url(#accentGrad)" />
+    
+    <!-- T stem -->
+    <path d="M 236 220 L 276 220 L 276 380 L 236 380 Z" fill="url(#accentGrad)" opacity="0.8" />
+    
+    <!-- Geometric 'N' - Left Stem -->
+    <path d="M 160 200 L 200 200 L 200 380 L 160 380 Z" fill="url(#primaryGrad)" />
+    
+    <!-- Geometric 'N' - Right Stem -->
+    <path d="M 312 200 L 352 200 L 352 380 L 312 380 Z" fill="url(#primaryGrad)" />
+    
+    <!-- Geometric 'N' - Diagonal -->
+    <path d="M 200 200 L 312 380 L 312 330 L 200 200 Z" fill="url(#primaryGrad)" />
+  </g>
+</svg>
