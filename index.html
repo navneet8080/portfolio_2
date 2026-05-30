@@ -3,132 +3,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navneet Tiwari - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <title>Navneet Tiwari | Enterprise Systems Consultant & Technology Leader</title>
+    <meta name="description" content="Workday Pro Integrations Certified professional and Automation Engineer with 3+ years of experience in Workday HCM, security governance, FastAPI automation, and robotics mechatronics.">
+    <meta name="keywords" content="Navneet Tiwari, Workday Consultant, Technology Leader, Enterprise Systems, Digital Transformation, AI Engineer, Automation Specialist, Robotics Engineer, Technology Consultant, Workday Security, Workday Studio">
+    <meta name="author" content="Navneet Tiwari">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/navneet8080/gtb">
+    <meta property="og:title" content="Navneet Tiwari | Enterprise Systems Consultant & Technology Leader">
+    <meta property="og:description" content="Workday Pro Integrations Certified professional with 3+ years of experience in Workday systems, AI automation, and mechatronics research.">
+    <meta property="og:image" content="images/Profile_Photo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Navneet Tiwari | Enterprise Systems & Technology Leader">
+    <meta property="twitter:description" content="Workday Pro Integrations Certified professional with 3+ years of experience in Workday systems, AI automation, and mechatronics research.">
+    <meta property="twitter:image" content="images/Profile_Photo.png">
+
+    <!-- Theme Color styling for Mobile Browsers -->
+    <meta name="theme-color" content="#f8fafc" id="theme-color-meta">
+
+    <!-- Schema.org Person Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Navneet Tiwari",
+      "jobTitle": "Enterprise Systems Consultant & Technology Leader",
+      "url": "https://github.com/navneet8080",
+      "image": "https://github.com/navneet8080/gtb/blob/main/images/Profile_Photo.png?raw=true",
+      "email": "Navneet708080@gmail.com",
+      "telephone": "+91-8004229739",
+      "sameAs": [
+        "https://www.linkedin.com/in/navneet-tiwari-b59a85181",
+        "https://github.com/navneet8080"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Centre for Advanced Studies, AKTU, Lucknow",
+          "degree": "M.Tech in Mechatronics Engineering"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "SRMS College of Engineering & Technology, Bareilly",
+          "degree": "B.Tech in Electrical and Electronics Engineering"
+        }
+      ],
+      "knowsAbout": [
+        "Workday HCM",
+        "Workday Studio",
+        "Workday Security",
+        "Enterprise Interface Builder (EIB)",
+        "Core Connectors (CCW)",
+        "FastAPI",
+        "AI & Automation",
+        "Robotics Kinematics",
+        "Mechatronics",
+        "Python Development",
+        "Digital Transformation"
+      ],
+      "publishingPrinciples": [
+        {
+          "@type": "DigitalDocument",
+          "name": "Design and Analysis of Kinematic Model for a 12-DOF Bipedal Robot",
+          "url": "https://doi.org/10.1109/GlobalAISummit62156.2024.10947807"
+        },
+        {
+          "@type": "DigitalDocument",
+          "name": "Development of PIXHAWK-Based Quadcopter: A Bottom-Up Approach for Current Consumption Optimization",
+          "url": "https://doi.org/10.1007/978-981-99-8129-8_26"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navneet Tiwari</a>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="logo-link">Navneet<span>.Tiwari</span></a>
             
-            <!-- Theme Toggle Button (Visible on Small Devices) -->
-            <div class="d-flex align-items-center">
-                <button id="theme-toggle-small" class="btn btn-outline-light me-2 d-lg-none">🌙</button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <!-- Desktop Links -->
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">Summary</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#publications" class="nav-link">Research</a></li>
+                <li><a href="#certifications" class="nav-link">Credentials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Theme Toggle and Mobile Menu Button -->
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <!-- Sun Icon (for dark mode) -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon Icon (for light mode) -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="menu-btn" id="menu-toggle" aria-label="Open mobile navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
-
-            <!-- Navbar Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#landing">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item d-none d-lg-block">
-                        <button id="theme-toggle-large" class="btn btn-outline-light">🌙</button>
-                    </li>
-                </ul>
-            </div>
         </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li><a href="#about" class="mobile-nav-link">Summary</a></li>
+            <li><a href="#expertise" class="mobile-nav-link">Expertise</a></li>
+            <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+            <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+            <li><a href="#publications" class="mobile-nav-link">Research</a></li>
+            <li><a href="#certifications" class="mobile-nav-link">Credentials</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Landing Section -->
-    <section id="landing" class="vh-100 d-flex align-items-center justify-content-center bg-primary text-white" style="padding-top: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 text-center text-md-start">
-                    <h1 class="fw-bold display-4 display-md-3">I'm Navneet Tiwari</h1>
-                    <p class="fs-3 fs-md-2">Automation Engineer</p>
-                    <p class="fs-5 fs-md-4">
-                        <span class="full-text">With over 3+ years of experience in AI/ML, Robotics, and Automotive systems. Proven expertise in Python automation, embedded systems, and EV powertrain optimization. I combine technical expertise with innovative thinking to deliver impactful and customer-focused solutions.</span>
-                        <span class="short-text">With over 3+ years of experience in AI/ML, Robotics, and Automotive systems.</span>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span class="badge">Enterprise Technology & AI</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Technology Leader | Enterprise Systems | <span>AI, Automation & Digital Transformation</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Helping organizations modernize operations through enterprise technology, intelligent automation, digital platforms, and scalable solutions.
                     </p>
-                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mt-4">
-                        <a href="images/Navneet_Resume_2025_IITK.pdf" class="btn btn-light btn-lg">Resume</a>
-                        <a href="#projects" class="btn btn-light btn-lg">Projects</a>
-                        <a href="#publications" class="btn btn-light btn-lg">Publications</a>
-                        
-                        <a href="#contact" class="btn btn-light btn-lg">Hire Me</a>
+                    <div class="btn-group hero-actions">
+                        <a href="#experience" class="btn btn-primary">View Experience</a>
+                        <a href="images/Navneet_Resume_2025_IITK.pdf" target="_blank" class="btn btn-outline" download>Download Resume</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
-                    <img src="images/Profile_Photo.png" class="rounded-circle img-fluid" alt="Your Photo" width="300">
+                <div class="hero-visual">
+                    <div class="profile-wrapper">
+                        <div class="profile-border"></div>
+                        <img src="images/Profile_Photo.png" alt="Navneet Tiwari" class="profile-img">
+                        <div class="hero-decor-1"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 section-padding">
+    <!-- Professional Summary -->
+    <section class="section" id="about">
         <div class="container">
-            <h2 class="text-center mb-4">Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Programming Languages</h4>
-                    <ul>
-                        <li>Python 3</li>
-                        <li>Embedded C, C++</li>
-                        <li>MATLAB Scripting</li>
-                    </ul>
+            <div class="section-header">
+                <span class="section-subtitle">Executive Profile</span>
+                <h2 class="section-title">Professional Summary</h2>
+            </div>
+            
+            <p class="summary-lead">
+                Workday Pro Integrations Certified professional with over three years of experience supporting enterprise Workday ecosystems through integrations, security administration, production support, and business process optimization. 
+            </p>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3 class="summary-card-title">Enterprise Systems</h3>
+                    <p class="summary-card-desc">
+                        Skilled in Workday HCM, Security governance, EIB, Core Connectors (CCW), Workday Studio, and Web Services (SOAP/REST). Exposing secure reporting schemas using RaaS to downstream systems.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <h4>AI & ML Technologies</h4>
-                    <ul>
-                        <li>Pandas, Numpy, Scikit-learn</li>
-                        <li>OpenCV</li>
-                        <li>Prompt Engineering</li>
-                    </ul>
+                
+                <div class="summary-card">
+                    <div class="summary-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="summary-card-title">AI & Automation</h3>
+                    <p class="summary-card-desc">
+                        Designing high-concurrency systems using FastAPI, automating workflows via Agentic architectures, RAG (Retrieval-Augmented Generation), vector indices (FAISS), and building Jenkins CI/CD pipelines.
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="summary-card-title">Intelligent Systems</h3>
+                    <p class="summary-card-desc">
+                        Postgraduate specialization (M.Tech) in mechatronics and control systems. Published research on bipedal robotics kinematic modeling and drone power optimization under Springer and IEEE formats.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Expertise -->
+    <section class="section" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Skills Inventory</span>
+                <h2 class="section-title">Core Expertise</h2>
+            </div>
+            
+            <div class="expertise-grid">
+                <!-- 1. Enterprise Technology -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                            <line x1="4" y1="22" x2="4" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Enterprise Technology</h3>
+                    <p class="expertise-desc">Integration design, systems architecture, secure file transfers (SFTP/HTTPS), and database integration protocols for global systems.</p>
+                </div>
+
+                <!-- 2. Workday Ecosystem -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Workday Ecosystem</h3>
+                    <p class="expertise-desc">Workday HCM, EIBs, CCW, Workday Studio, Workday Security (RBAC, DSPs), Business Process Framework (BPF), and RaaS reporting APIs.</p>
+                </div>
+
+                <!-- 3. Business Process Optimization -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Business Process Optimization</h3>
+                    <p class="expertise-desc">Analyzing enterprise bottlenecks, designing automated approval chains, streamlining data validations, and eliminating manual data reconciliation.</p>
+                </div>
+
+                <!-- 4. Digital Transformation -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Digital Transformation</h3>
+                    <p class="expertise-desc">Helping corporations transition from legacy databases to cloud environments, implementing API-first integrations, and governing software access.</p>
+                </div>
+
+                <!-- 5. AI & Automation -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">AI & Automation</h3>
+                    <p class="expertise-desc">FastAPI services, Python testing automation, custom agentic workflows, LLM integrations (Azure OpenAI, RAG, FAISS), and process scripts.</p>
+                </div>
+
+                <!-- 6. Data Analytics -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Data Analytics</h3>
+                    <p class="expertise-desc">Advanced data structures, data mapping, XML transformation, Pandas & NumPy data wrangling, and analytics dashboards.</p>
+                </div>
+
+                <!-- 7. Cloud Technologies -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Cloud Technologies</h3>
+                    <p class="expertise-desc">Core architectures across Amazon Web Services (AWS) and Oracle Cloud Infrastructure (OCI), OAuth 2.0 authorization, and secure endpoints.</p>
+                </div>
+
+                <!-- 8. Technology Strategy -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Technology Strategy</h3>
+                    <p class="expertise-desc">Agile & Scrum delivery, sprint lifecycle alignment, cross-functional engineering, production support frameworks, and governance standards.</p>
+                </div>
+
+                <!-- 9. Robotics & Intelligent Systems -->
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                            <circle cx="12" cy="5" r="2"></circle>
+                            <path d="M12 7v4"></path>
+                            <line x1="8" y1="16" x2="8" y2="16.01"></line>
+                            <line x1="16" y1="16" x2="16" y2="16.01"></line>
+                        </svg>
+                    </div>
+                    <h3 class="expertise-title">Robotics & Intelligent Systems</h3>
+                    <p class="expertise-desc">Robot kinematics, RTOS, ROS 2, control architectures, microcontrollers, embedded sensors, actuators, and mechatronics design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Career Roadmap</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <!-- 1. NNS Media -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Software Engineer & Technology Operations</h3>
+                                <span class="timeline-company">NNS Media Broadcasting Productions Pvt. Ltd.</span>
+                            </div>
+                            <span class="timeline-duration">Jan 2025 – Present</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Designed API-driven automation solutions for content management and publishing workflows, reducing manual efforts by 80%.</li>
+                            <li>Built high-concurrency backend services using FastAPI and developed structured process workflow orchestration models.</li>
+                            <li>Implemented agentic workflow frameworks for automated decision-making, content routing, and execution loops.</li>
+                            <li>Developed secure REST API integrations and data transformation pipelines supporting backend systems.</li>
+                            <li>Improved operational reliability through process monitoring, data validation frameworks, and production performance tuning.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Wipro Limited -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Workday Integration & Security Consultant</h3>
+                                <span class="timeline-company">Wipro Limited (Consulting and Systems Delivery)</span>
+                            </div>
+                            <span class="timeline-duration">Nov 2021 – Jan 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Supported enterprise Workday environments across global integrations, access governance, security configuration, and production support.</li>
+                            <li>Developed and maintained inbound and outbound integrations using Enterprise Interface Builder (EIB), Core Connectors (CCW), Workday Studio, and Web Services (SOAP/REST).</li>
+                            <li>Configured complex Role-Based Security Groups (RBSG), Domain Security Policies (DSP), and security boundaries to enforce strict compliance and privacy rules.</li>
+                            <li>Served as an engineering consultant for **Intel Corp.** (Oct 2023 – Dec 2024), writing Python scripts to automate Post-Silicon CPU validation, OS boot testing, and bug tracking.</li>
+                            <li>Served as an automotive engineer for **Dana Incorporated** (Nov 2021 – Apr 2023), developing MATLAB/Simulink simulations to optimize EV battery controls, regenerative braking, and telemetry.</li>
+                            <li>Developed custom Workday Reports-as-a-Service (RaaS) REST endpoints enabling secure API-driven data consumption for external reporting platforms.</li>
+                            <li>Participated in global Agile sprint cycles, performing log analysis, root cause troubleshooting, and release governance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Magov Robotics -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Robotics Trainee Engineer</h3>
+                                <span class="timeline-company">Magov Robotics</span>
+                            </div>
+                            <span class="timeline-duration">Mar 2021 – Oct 2021</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Designed physical mechatronic prototypes and validation test machines, writing underlying microcontroller software.</li>
+                            <li>Built testing rigs and validated actuator behavior under load, documenting system architectures.</li>
+                            <li>Organized over 10 technology workshops and college webinars, presenting fundamentals of robotics and control loops.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-     
-    <section id="projects" class="py-5 section-padding">
+    <section class="section" id="projects">
         <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row">
-                <!-- Machine Learning Application -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Machine Learning Application</h5>
-                            <p class="card-text">Fast charging analysis and report building for Wipro.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
+            <div class="section-header">
+                <span class="section-subtitle">Case Studies</span>
+                <h2 class="section-title">Selected Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1: Enterprise Workday Integrations -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Enterprise Integration</span>
+                        <h3 class="project-title">Enterprise Workday Integrations</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Need to unify fragmented personnel records across external databases and third-party systems into a central Workday environment securely.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Built bidirectional integrations utilizing Workday Studio, Core Connectors (CCW), custom XML parsing, and complex XSLT scripts. Configured secure SFTP connections and SOAP services.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Automated data flows for global personnel lifecycle changes, reducing manual data reconciliation errors by 95%.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">Workday Studio</span>
+                            <span class="badge">XML / XSLT</span>
+                            <span class="badge">SOAP</span>
+                            <span class="badge">SFTP</span>
                         </div>
                     </div>
                 </div>
-                <!-- Add more projects here -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">AI Chatbot</h5>
-                            <p class="card-text">Developed an AI chatbot for customer support using NLP techniques.</p>
-                            <a href="project-template.html" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                    
-<div class="card-body">
-    <h5 class="card-title">Machine Learning Application</h5>
-    <p class="card-text">Fast charging analysis and report building for Wipro.</p>
-    <a href="project-ml-app.html" class="btn btn-primary">Read More</a>
-</div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Embedded System for IoT</h5>
-                            <p class="card-text">Designed and implemented an embedded system for IoT applications.</p>
-                            <a href="#" class="btn btn-primary">Read More</a>
+                <!-- Project 2: Workday Security & Access Governance -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Security & Compliance</span>
+                        <h3 class="project-title">Workday Security & Access Governance</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Ensuring strict data isolation and auditing across domains, safeguarding sensitive compensation, benefit, and PII datasets in a highly regulated landscape.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Redesigned the access control structure using Role-Based Security Groups, Domain Security Policies (DSP), and Business Process Security Policies (BPSP). Implemented systematic user tracking and log auditing.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Achieved 100% compliance with corporate access standards, eliminating unauthorized access logs and streamlining security audits.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">Workday Security</span>
+                            <span class="badge">RBAC</span>
+                            <span class="badge">Access Control</span>
+                            <span class="badge">DSPs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: API-Driven RaaS Core Reporting -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Data & Analytics</span>
+                        <h3 class="project-title">API-Driven RaaS Core Reporting</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Downstream business analytics, BI platforms, and operational dashboards required clean, real-time Workday data streams without heavy polling.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Created high-performance custom Workday reports and exposed them as RESTful Reports-as-a-Service (RaaS) API endpoints using secure JSON token authentication.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Allowed downstream custom business systems to consume fresh enterprise analytics with zero manual data exports.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">Workday RaaS</span>
+                            <span class="badge">REST APIs</span>
+                            <span class="badge">JSON</span>
+                            <span class="badge">OAuth 2.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: High-Concurrency Process Automation -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">AI & Web Services</span>
+                        <h3 class="project-title">High-Concurrency Process Automation</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Manual data formatting, validation, and content routing created operational overhead, delaying data synchronization times across system pipelines.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Developed high-concurrency FastAPI servers in Python to run data orchestration loops. Designed agentic decision paths using REST requests and JSON schema validation.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Reduced process execution cycle times by 80% and minimized data formatting incidents in production databases.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">FastAPI</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Agentic Workflows</span>
+                            <span class="badge">JSON Schema</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: 12-DOF Humanoid Gait Controller -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Robotics & Engineering</span>
+                        <h3 class="project-title">12-DOF Humanoid Gait Controller</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Bipedal walking models require highly optimized inverse kinematics solvers to prevent stability loss during gait transition loops.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Designed the full kinematic modeling, coordinate transformations, and Denavit-Hartenberg matrices. Modeled gait behaviors using MATLAB and wrote Arduino/STM32 control loops.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Validated stable walking on physical bipedal hardware, receiving the Best Paper Award at the IEEE Global AI Summit 2024.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">MATLAB</span>
+                            <span class="badge">Embedded C++</span>
+                            <span class="badge">Kinematics</span>
+                            <span class="badge">RTOS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Powertrain & BMS Model Optimizations -->
+                <div class="project-card">
+                    <div class="project-body">
+                        <span class="badge" style="align-self: flex-start; margin-bottom: 1rem;">Model-Based Design</span>
+                        <h3 class="project-title">Powertrain & BMS Model Optimizations</h3>
+                        <div class="project-details">
+                            <div>
+                                <h4 class="project-block-title">Business Challenge</h4>
+                                <p class="project-block-content">Optimizing EV battery longevity and thermal safety profiles requires accurate simulation models under varying highway load cycles.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Solution</h4>
+                                <p class="project-block-content">Built Simulink representations of battery cells, current charge curves, and motor control behaviors. Validated charging analysis workflows for client projects at Wipro.</p>
+                            </div>
+                            <div>
+                                <h4 class="project-block-title">Impact Achieved</h4>
+                                <p class="project-block-content">Provided simulated models proving a 14% improvement in battery conservation during aggressive deceleration phases.</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="badge">MATLAB / Simulink</span>
+                            <span class="badge">EV Powertrain</span>
+                            <span class="badge">BMS Modeling</span>
                         </div>
                     </div>
                 </div>
@@ -136,84 +612,311 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-5 section-padding">
+    <!-- Research & Publications -->
+    <section class="section" id="publications">
         <div class="container">
-            <h2 class="text-center mb-4">Certifications</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li>✅ Data Science and Machine Learning (Udemy | 2023)</li>
-                        <li>✅ Computer Vision Fundamentals (Udemy | 2023)</li>
-                        <li>✅ Complete Pandas for Beginners (Udemy | 2023)</li>
-                        <li>✅ Azure Open AI & Prompt Engineering (Udemy | 2023)</li>
-                        <li>✅ Linux Command Line (Udemy | 2023)</li>
-                    </ul>
+            <div class="section-header">
+                <span class="section-subtitle">Academic Contributions</span>
+                <h2 class="section-title">Research & Publications</h2>
+            </div>
+            
+            <div class="pubs-list">
+                <!-- Paper 1 -->
+                <div class="pub-card">
+                    <span class="badge" style="position: absolute; top: 1.5rem; right: 1.5rem; background-color: var(--success-light); color: var(--success); border-color: rgba(16, 185, 129, 0.15);">Best Paper Award</span>
+                    <h3 class="pub-title">Design and Analysis of Kinematic Model for a 12-DOF Bipedal Robot</h3>
+                    <div class="pub-meta">
+                        <span><strong>Conference:</strong> IEEE Global AI Summit 2024</span>
+                        <span><strong>DOI:</strong> <a href="https://doi.org/10.1109/GlobalAISummit62156.2024.10947807" target="_blank">10.1109/GlobalAISummit62156.2024.10947807</a></span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                        This research establishes a mathematical blueprint for 12-degrees-of-freedom bipedal locomotion. Developed coordinate mapping, forward/inverse kinematic solvers, and simulation gait cycles to ensure stability across complex testing surfaces.
+                    </p>
+                    <a href="https://doi.org/10.1109/GlobalAISummit62156.2024.10947807" target="_blank" class="pub-link">
+                        View Paper on IEEE Xplore
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled">
-                        <li>✅ Oracle Cloud Fundamentals (Oracle | 2023)</li>
-                        <li>✅ Python Specialization (University of Michigan | 2021)</li>
-                        <li>✅ Embedded Systems (University of California, Irvine | 2021)</li>
-                        <li>✅ Internet of Things (Internshala | 2019)</li>
-                        <li>✅ PLC Training (Cepta | 2018)</li>
-                    </ul>
+
+                <!-- Paper 2 -->
+                <div class="pub-card">
+                    <h3 class="pub-title">Development of PIXHAWK-Based Quadcopter: A Bottom-Up Approach for Current Consumption Optimization</h3>
+                    <div class="pub-meta">
+                        <span><strong>Book Series:</strong> Springer MAiTRI 2023</span>
+                        <span><strong>DOI:</strong> <a href="https://doi.org/10.1007/978-981-99-8129-8_26" target="_blank">10.1007/978-981-99-8129-8_26</a></span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+                        Focused on reducing energy consumption profiles for remote quadcopters. Modeled weight allocation, current drainage during throttle states, and configured custom power management algorithms within Pixhawk firmware.
+                    </p>
+                    <a href="https://doi.org/10.1007/978-981-99-8129-8_26" target="_blank" class="pub-link">
+                        View Paper on SpringerLink
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 section-padding">
+    <!-- Leadership & Ventures -->
+    <section class="section" id="leadership">
         <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center">
-                    <img src="images/Profile_Photo.png" class="rounded-circle img-fluid about-photo" alt="Navneet Tiwari" width="200">
+            <div class="section-header">
+                <span class="section-subtitle">Impact Beyond Work</span>
+                <h2 class="section-title">Leadership & Ventures</h2>
+            </div>
+            
+            <div class="ventures-grid">
+                <!-- Venture 1: skildforge -->
+                <div class="venture-card">
+                    <div class="venture-header">
+                        <div class="venture-logo">SF</div>
+                        <div>
+                            <h3 class="venture-name">skildforge</h3>
+                            <span class="venture-role">Co-Founder & Technology Lead</span>
+                        </div>
+                    </div>
+                    <p class="venture-desc">
+                        Co-founded a dynamic technology initiative aiming to bridge the gap between abstract academic mechatronics and real-world engineering environments. Managed system architectures and organized project-building hackathons.
+                    </p>
                 </div>
-                <div class="col-md-8">
-                    <p class="lead">A lifelong learner from India, fueled by curiosity and a passion for exploring the dynamic intersections of technology, AI, and automation. Passionate about solving real-world problems through innovation and technology.</p>
-                    <h3>Contact Information</h3>
-                    <p>📍 R.N. 204 Gayatri Lake View Apartment, Bengaluru (560099)</p>
-                    <p>📞 +91-8004229739</p>
-                    <p>✉️ <a href="mailto:Navneet708080@gmail.com">Navneet708080@gmail.com</a></p>
-                    <p>🔗 <a href="https://www.linkedin.com/in/navneet-tiwari-b59a85181" target="_blank">LinkedIn Profile</a></p>
+
+                <!-- Venture 2: Workshops & Competitions -->
+                <div class="venture-card">
+                    <div class="venture-header">
+                        <div class="venture-logo">TI</div>
+                        <div>
+                            <h3 class="venture-name">Technology Initiatives</h3>
+                            <span class="venture-role">Speaker & Event Organizer</span>
+                        </div>
+                    </div>
+                    <p class="venture-desc">
+                        Conducted over 20 hands-on workshops on robotics, microcontroller architectures, sensor networks, and AI fundamentals. Won 17+ technical robotics and engineering tournaments (Robowars, Line Followers, Drone Racing) across India.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Credentials -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Academic & Professional Credentials</span>
+                <h2 class="section-title">Certifications & Education</h2>
+            </div>
+            
+            <div class="cert-groups">
+                <!-- Enterprise Platforms -->
+                <div class="cert-group-card">
+                    <h3 class="cert-group-title">Enterprise & Cloud</h3>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Workday Pro Integrations Certification (Workday Pro)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Oracle Cloud Infrastructure Foundations (Oracle)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI & Analytics -->
+                <div class="cert-group-card">
+                    <h3 class="cert-group-title">AI & Data Analytics</h3>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Azure OpenAI Prompt Engineering with ChatGPT (Udemy)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Data Science and Machine Learning: Basic to Advanced (Udemy)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Complete Pandas for Absolute Beginners (Udemy)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Automation & Linux -->
+                <div class="cert-group-card">
+                    <h3 class="cert-group-title">Automation & Scripting</h3>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            PLC Industrial Robotics Automation (Cepta)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Internet of Things Specialization (Internshala)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Linux Command Line Administration (Udemy)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Core Engineering -->
+                <div class="cert-group-card">
+                    <h3 class="cert-group-title">Software & Engineering</h3>
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Python Specialization: 5-Course Series (Michigan Univ.)
+                        </li>
+                        <li class="cert-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Embedded Systems Specialization (UC Irvine)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="edu-grid">
+                <!-- M.Tech -->
+                <div class="edu-card">
+                    <div>
+                        <span class="edu-year">2022 – 2024</span>
+                        <h3 class="edu-degree">M.Tech in Mechatronics Engineering (73%)</h3>
+                    </div>
+                    <span class="edu-inst">Centre for Advanced Studies, AKTU, Lucknow</span>
+                </div>
+
+                <!-- B.Tech -->
+                <div class="edu-card">
+                    <div>
+                        <span class="edu-year">2017 – 2021</span>
+                        <h3 class="edu-degree">B.Tech in Electrical & Electronics Engineering (67%)</h3>
+                    </div>
+                    <span class="edu-inst">SRMS College of Engineering & Technology, Bareilly</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 section-padding">
+    <section class="section" id="contact">
         <div class="container">
-            <h2 class="text-center mb-4">Hire Me</h2>
-            <form action="https://formspree.io/f/xdkajjoa" method="POST" class="modern-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            <div class="section-header">
+                <span class="section-subtitle">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Info Column -->
+                <div class="contact-info">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary);">Let's discuss digital transformation opportunities</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 2rem;">
+                        Available for enterprise consulting, Workday architecture, integration governance, AI automation workflows, and robotics system development.
+                    </p>
+                    
+                    <!-- Location -->
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <div class="contact-value">Noida / Bengaluru, India</div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <div class="contact-value"><a href="mailto:Navneet708080@gmail.com" style="color: inherit;">Navneet708080@gmail.com</a></div>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks -->
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Professional Network</span>
+                            <div class="contact-value"><a href="https://www.linkedin.com/in/navneet-tiwari-b59a85181" target="_blank">linkedin.com/in/navneet-tiwari-b59a85181</a></div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Development Workspace</span>
+                            <div class="contact-value"><a href="https://github.com/navneet8080" target="_blank">github.com/navneet8080</a></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Your Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+
+                <!-- Form Column -->
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/xdkajjoa" method="POST" id="contact-form">
+                        <div class="form-group">
+                            <label for="form-name" class="form-label">Full Name</label>
+                            <input type="text" id="form-name" name="name" class="form-control" placeholder="E.g., Jane Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="form-email" class="form-label">Corporate Email</label>
+                            <input type="email" id="form-email" name="email" class="form-control" placeholder="E.g., jsmith@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-subject" class="form-label">Subject</label>
+                            <input type="text" id="form-subject" name="subject" class="form-control" placeholder="Workday Consulting / Automation Project" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Project Brief</label>
+                            <textarea id="form-message" name="message" class="form-control" placeholder="Outline your requirements or inquiry here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-3 bg-dark text-white text-center">
-        <p>© 2025 Navneet Tiwari | All Rights Reserved</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Navneet Tiwari. All rights reserved.</p>
+            <p style="font-size: 0.75rem; color: var(--text-muted);">Designed for high-performance Workday integrations & intelligent automated workflows.</p>
+        </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>

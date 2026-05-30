@@ -1,160 +1,155 @@
-// Smooth scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        } else {
-            console.error(`Target element not found for ${this.getAttribute('href')}`);
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================================================
+    // 1. MOBILE MENU NAVIGATION
+    // ==========================================================================
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-// Theme Toggle with Persistence
-const themeToggleSmall = document.getElementById('theme-toggle-small');
-const themeToggleLarge = document.getElementById('theme-toggle-large');
-const currentTheme = localStorage.getItem('theme') || 'light';
+    const toggleMenu = () => {
+        menuToggle.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+        document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    };
 
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('navbar').classList.add('navbar-dark', 'bg-dark');
-    document.getElementById('navbar').classList.remove('navbar-light', 'bg-light');
-    themeToggleSmall.textContent = '☀️';
-    themeToggleLarge.textContent = '☀️';
-} else {
-    document.body.classList.add('light-mode');
-    document.getElementById('navbar').classList.add('navbar-light', 'bg-light');
-    document.getElementById('navbar').classList.remove('navbar-dark', 'bg-dark');
-    themeToggleSmall.textContent = '🌙';
-    themeToggleLarge.textContent = '🌙';
-}
+    menuToggle.addEventListener('click', toggleMenu);
 
-const toggleTheme = () => {
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.toggle('light-mode');
-    const newTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', newTheme);
-    themeToggleSmall.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    themeToggleLarge.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    themeToggleSmall.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    themeToggleLarge.setAttribute('aria-label', newTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    
-    const navbar = document.getElementById('navbar');
-    if (newTheme === 'dark') {
-        navbar.classList.add('navbar-dark', 'bg-dark');
-        navbar.classList.remove('navbar-light', 'bg-light');
-    } else {
-        navbar.classList.add('navbar-light', 'bg-light');
-        navbar.classList.remove('navbar-dark', 'bg-dark');
-    }
-};
-
-themeToggleSmall.addEventListener('click', toggleTheme);
-themeToggleLarge.addEventListener('click', toggleTheme);
-
-// Close Navbar Menu When Clicking Outside
-document.addEventListener('click', (e) => {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-        navbarCollapse.classList.remove('show');
-    }
-});
-
-// Highlight active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('#navbarNav .nav-link');
-function activateNavLink() {
-    let currentSection = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active');
-        }
-    });
-}
-window.addEventListener('scroll', activateNavLink);
-
-// Animate On Scroll (AOS) initialization
-if (typeof AOS !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            duration: 800,
-            once: true
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('open')) {
+                toggleMenu();
+            }
         });
     });
-}
 
-// --- Scroll-triggered horizontal nav ---
-// Create the scroll-nav dynamically if not present
-if (!document.querySelector('.scroll-nav')) {
-    const scrollNav = document.createElement('nav');
-    scrollNav.className = 'scroll-nav';
-    scrollNav.innerHTML = `
-        <ul class="scroll-nav-list">
-            <li><a class="scroll-nav-link" href="#about">About</a></li>
-            <li><a class="scroll-nav-link" href="#skills">Skills</a></li>
-            <li><a class="scroll-nav-link" href="#projects">Projects</a></li>
-            <li><a class="scroll-nav-link" href="#certifications">Certifications</a></li>
-            <li><a class="scroll-nav-link" href="#contact">Contact</a></li>
-        </ul>
-    `;
-    document.body.appendChild(scrollNav);
-}
+    // Close menu if clicking outside of it
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('open') && 
+            !mobileMenu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            toggleMenu();
+        }
+    });
 
-const mainNavbar = document.querySelector('.navbar');
-const scrollNav = document.querySelector('.scroll-nav');
-const skillsSection = document.getElementById('landing');
 
-function toggleScrollNav() {
-    const skillsBottom = skillsSection.getBoundingClientRect().bottom + window.scrollY;
-    if (window.scrollY >= skillsBottom) {
-        mainNavbar.style.display = 'none';
-        scrollNav.style.display = 'block';
-    } else {
-        mainNavbar.style.display = '';
-        scrollNav.style.display = 'none';
-    }
-}
-window.addEventListener('scroll', toggleScrollNav);
+    // ==========================================================================
+    // 2. THEME MANAGER (Light/Dark Mode)
+    // ==========================================================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeColorMeta = document.getElementById('theme-color-meta');
+    
+    const getSavedTheme = () => {
+        return localStorage.getItem('theme');
+    };
 
-// Highlight active link in scroll-nav
-function activateScrollNavLink() {
+    const getSystemTheme = () => {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const setTheme = (theme) => {
+        if (theme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeColorMeta.setAttribute('content', '#070a13');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeColorMeta.setAttribute('content', '#f8fafc');
+            localStorage.setItem('theme', 'light');
+        }
+    };
+
+    // Initialize theme
+    const activeTheme = getSavedTheme() || getSystemTheme();
+    setTheme(activeTheme);
+
+    // Event listener for theme toggle button
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+        setTheme(currentTheme);
+    });
+
+    // Listen for system theme changes dynamically
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!getSavedTheme()) {
+            setTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
+
+    // ==========================================================================
+    // 3. INTERSECTION OBSERVER FOR ACTIVE NAVBAR LINKS
+    // ==========================================================================
     const sections = document.querySelectorAll('section[id]');
-    let currentSection = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-    document.querySelectorAll('.scroll-nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active');
-        }
-    });
-}
-window.addEventListener('scroll', activateScrollNavLink);
+    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+    const mobLinks = document.querySelectorAll('.mobile-nav-list .mobile-nav-link');
 
-// Smooth scroll for scroll-nav links
-scrollNav.addEventListener('click', function(e) {
-    if (e.target.classList.contains('scroll-nav-link')) {
-        e.preventDefault();
-        const target = document.querySelector(e.target.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    const observerOptions = {
+        root: null,
+        rootMargin: '-30% 0px -60% 0px', // Trigger when section occupies the active middle portion
+        threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                
+                // Update Desktop Links
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+                // Update Mobile Drawer Links
+                mobLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach(section => observer.observe(section));
+
+
+    // ==========================================================================
+    // 4. CONTACT FORM VALIDATION & INTERACTIVE STATE
+    // ==========================================================================
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Basic UI loading indicator
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+
+            // Allow the form to proceed naturally to Formspree
+            // We do not preventDefault here so the HTML form action works out-of-the-box.
+        });
+    }
+
+    // Logo Click returns to top smoothly
+    const logoLink = document.getElementById('logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Update active link to none or hero
+            navLinks.forEach(link => link.classList.remove('active'));
+            mobLinks.forEach(link => link.classList.remove('active'));
+        });
     }
 });
-
